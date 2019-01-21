@@ -1,0 +1,18 @@
+{
+
+    "admin_server": {
+        "address": "127.0.0.1",
+        "port": "8081"
+    },
+
+    "database": {
+        "path": "",
+        "password": ""
+    },
+
+    "readers": [
+        "bestbuy",
+        "walmart"
+    ]
+    
+}

@@ -1,0 +1,248 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#showing {
+    width: 100%;
+    text-align: center;
+}
+
+.results-header {
+    width: 100%;
+    height: 28px;
+    border-bottom: 1px solid gainsboro;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.results-options#sort-options {
+    position:absolute; 
+    right: 50px;
+}
+
+.results-options#show-per-page {
+    position:absolute; 
+    right: 300px;
+}
+
+.results-options p {
+    position: relative;
+    display: inline;
+    margin-right: 5px;
+}
+
+.results-options select {
+    width: 135px;
+    height: 28px;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ljk1IDEwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9LmNscy0ye2ZpbGw6IzQ0NDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmFycm93czwvdGl0bGU+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iNC45NSIgaGVpZ2h0PSIxMCIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxLjQxIDQuNjcgMi40OCAzLjE4IDMuNTQgNC42NyAxLjQxIDQuNjciLz48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMy41NCA1LjMzIDIuNDggNi44MiAxLjQxIDUuMzMgMy41NCA1LjMzIi8+PC9zdmc+) no-repeat 95% 50%;
+	-moz-appearance: none; 
+	-webkit-appearance: none; 
+    appearance: none;
+    text-indent: 10px;
+}
+
+.search-sidebar {
+    width: 260px;
+    height: 980px;
+
+    background-color: white;
+    border-color: rgb(223, 223, 223);
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 2px 2px 2px rgb(238, 238, 238);
+
+
+}
+
+#filter-list {
+    margin-left: 20px;
+}
+
+#filter-top {
+    margin: 18px auto 0;
+    height: 30px;
+    width: 85%;
+}
+
+#filter-button {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 3px;
+}
+
+#filter-button:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+}
+
+.filter-title {
+    margin-bottom: 10px;
+}
+
+hr {
+    margin-right: 10px;
+}
+
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    position: relative;
+    bottom: 1px;
+}
+
+#filter-list label {
+    font-size: 14px;
+}
+
+#filter-list ul {
+    list-style: none;
+    position: absolute;
+    margin-left: -38px;
+	margin-top: 0px
+}
+
+.search-results {
+    flex-basis: 60%;
+    flex-grow: 1;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+.product-container {
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    height: 280px;
+    padding: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: white;
+    border-color: rgb(223, 223, 223);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgb(238, 238, 238);
+    flex-grow: 1;
+}
+
+
+.product-image {
+    width: 200px;
+    height: 170px;
+    object-fit: contain;
+}
+
+.product-description {
+    width: 200px;
+    height: 100px;
+    font-family: Arial;
+    margin: auto;
+}
+
+.price {
+    font-size: 18px;
+    margin-bottom: -10px;
+}
+
+.title {
+    font-size: 14px;
+    color: grey;
+}
+
+.title-full {
+    font-size: 14px;
+    color: grey;
+    display: none;
+}
+
+.product-description:hover .title {
+    display: none;
+}
+
+.product-description:hover .title-full {
+    display: block;
+}
+
+.product-container-list {
+    display: inline-flex;
+    vertical-align: top;
+    width: 100%;
+    height: 160px;
+    padding: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: white;
+    border: 1px solid rgb(223, 223, 223);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgb(238, 238, 238);
+    flex-grow: 1;
+
+    display: none;
+}
+
+.product-container-list > div {
+    width: 35%;
+}
+
+.page-selector {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.page-selector ul {
+    list-style: none;
+    padding-left: 0;
+    display: inline-block;
+}
+
+.page-selector ul li {
+    display: inline-block;
+}
+
+.page-selector ul li#pg-num button{
+    font-size: 15px;
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 3px;
+}
+
+.page-selector ul li#pg-num button:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+}
+
+.page-selector #arrow-select button {
+    position: relative;
+    top: 6px;
+    font-size: 15px;
+    width: 60px;
+    height: 35px;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 3px;
+}
+
+.page-selector #arrow-select button:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+}

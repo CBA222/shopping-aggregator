@@ -1,0 +1,15 @@
+{% extends "shop/search_results.html" %}
+
+{% block product-content %}
+<div class="product-list">
+    {% for product in product_list %}
+    <div class="product-container"> 
+        <img src={{ product.image_url }} class="product-image">
+        <div class="product-description">
+            <p class="price"><b>${{ product.price }}</b></p>
+            <p class="title">{{ product.name|truncatechars:40}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

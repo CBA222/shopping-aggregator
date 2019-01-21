@@ -1,0 +1,549 @@
+#screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.0;
+    z-index: -10
+}
+
+.container {
+    padding-top: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: auto;
+    height: 2000px;
+    color: #454545;
+    background-color: #fafaf7;
+    background-color: white;
+    
+    box-sizing: border-box;
+}
+
+.section-heading {
+    width: 100%;
+    font-size: 20px;
+    text-align: left;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
+
+/* PRODUCT HEADER */
+
+#product-header {
+    width: 100%;
+    height: 40px;
+}
+
+#product-header p {
+    display: inline-block;
+    font-size: 14px;
+}
+
+#product-header a p {
+    text-decoration: underline;
+}
+
+#product-header a:link {
+    color: #454545;
+}
+
+#product-header a:visited {
+    color: #454545;
+}
+
+/* PRODUCT HEADER */
+
+/* PRODUCT BOX */
+
+#product-box {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+#product-description {
+    word-wrap: break-word;
+    width: 60%;
+    display: inline-block;
+    margin-left: 50px;
+}
+
+#product-description h2 {
+    font-size: 22px;
+    font-weight: normal;
+    border-bottom: 2px solid gainsboro;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+}
+
+#image-gallery {
+    width: 40%;
+    height: auto;
+}
+
+#product-img {
+    border: 1px solid gainsboro;
+    width: 100%;
+    height: 400px;
+    display: inline-flex;
+    background-color: white;
+}
+
+#product-img img{
+    border: none;
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    margin: auto;
+    box-shadow: none;
+}
+
+#image-gallery #gallery-thumbs {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+#image-gallery #gallery-thumbs div {
+    width: 100px;
+    height: 84%;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid gainsboro;
+    display: flex;
+}
+
+#image-gallery #gallery-thumbs div:hover {
+    cursor: pointer;
+    border: 2px solid black;
+    transition: 0.3s ease;
+}
+
+#image-gallery #gallery-thumbs div img {
+    height: 80%;
+    width: 80%;
+    margin: auto;
+    object-fit: contain;
+}
+
+/* RATING START */
+
+#rating ul {
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    padding-left: 0;
+    list-style: none;
+}
+#rating ul li {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjREREREREIiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
+    background-size: contain;
+}
+
+#rating ul #starred{
+    background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjRkZERjg4IiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4='); 
+    background-size: contain; 
+
+}
+
+#rating a {
+    position: relative;
+    font-size: 12px;
+    margin-left: 5px;
+    top: -2px;
+}
+
+#rating a:link {
+    color: #454545;
+}
+
+#rating a:visited {
+    color: #454545;
+}
+/* RATING END */
+
+#buy-box-wrapper {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+}
+
+#buy-box {
+    background-color: #f5f2eb;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px #cfcfcf;
+    display: inline-block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+#buy-box #header {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 14px;
+}
+
+#buy-box #buy {
+    display: inline-flex;
+}
+
+#buy-box #price {
+    text-align: left;
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#buy-box #vendor {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 14px;
+}
+
+#buy-box #buynow {
+    position: relative;
+    margin-left: 15px;
+    width: 100px;
+    height: 40px;
+    
+}
+
+#buy-box #buynow button {
+    background-color: #40c73c;
+    border: none;
+    border-radius: 3px;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+}
+
+#buy-box #buynow button:hover {
+    background-color: #30b032;
+    cursor: pointer;
+}
+
+#buy-box #cheaper {
+    position: relative;
+    margin-left: 15px;
+    width: 200px;
+    height: 40px;
+}
+
+#buy-box #cheaper button {
+    background-color: #6984db;
+    border: none;
+    border-radius: 3px;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+}
+
+#buy-box #cheaper button:hover {
+    background-color: #4b6ede;
+    cursor: pointer;
+}
+
+#extra-box {
+    display: inline-block;
+    flex-grow: 1;
+    height: auto;
+    padding-left: 30px;
+    margin: auto;
+}
+
+#extra-box #wishlist {
+    display: flex;
+}
+
+#extra-box #wishlist img {
+    display: inline;
+}
+
+#extra-box #wishlist a {
+    display: inline;
+    padding-left: 5px;
+    text-decoration: underline;
+}
+
+#extra-box #wishlist a:link {
+    color: #454545;
+}
+
+#extra-box #wishlist a:visited {
+    color: #454545;
+}
+
+#extra-box #wishlist a:hover {
+    color: royalblue;
+    text-decoration-color: royalblue;
+}
+
+
+#cheaper-options-wrapper {
+    width: 100%;
+    height: 150px;
+    display: none;
+}
+
+#cheaper-options-wrapper #cheaper-options {
+    background-color: #f5f2eb;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px #cfcfcf;
+
+    width: 100%;
+    height: 90%;
+
+    display: flex;
+}
+
+#cheaper-options-wrapper #cheaper-options button {
+    height: 100%;
+    margin: 0;
+    background: transparent;
+    border: none;
+}
+
+#cheaper-options-wrapper #cheaper-options button:nth-child(1) {
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+#cheaper-options-wrapper #cheaper-options button:nth-child(3) {
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+#cheaper-options-wrapper #cheaper-options button:hover {
+    cursor: pointer;
+    background-color: gainsboro;
+    transition: 0.35s ease;
+}
+
+#cheaper-options-wrapper #cheaper-options #product-gallery {
+    flex-grow: 1;
+    display: flex;
+}
+
+#cheaper-options-wrapper #cheaper-options #product-gallery > div {
+    width: 20%;
+    height: 100%;
+    box-sizing: border-box
+}
+
+#cheaper-options-wrapper #cheaper-options #product-gallery > div > div {
+    width: 100%;
+    height: 80%;
+    
+}
+
+#cheaper-options-wrapper #cheaper-options #product-gallery > div > p {
+    width: 100%;
+    height: 20%;
+    margin: 0;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 5px;
+}
+
+
+#other-stores {
+}
+
+#other-stores p {
+    font-size: 14px;
+}
+
+#other-stores p:nth-child(1) {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+#other-stores > p:nth-child(3) {
+    margin-top: 5px;
+    text-align: right;
+}
+
+#other-stores table {
+    width: 100%;
+    color: #454545;
+    font-size: 18px;
+    text-align: left;
+}
+
+#other-stores table tr {
+    height: 44px;
+}
+
+#other-stores table tr:nth-child(n+1) td{
+    background-color: #f5f5f5;
+    border-bottom: 1px solid gainsboro;
+}
+
+#other-stores table #header {
+    height: 25px;
+    margin-bottom: 20px;
+}
+
+#other-stores table tr:nth-child(2) td {
+    margin-top: 10px;
+}
+/*
+#other-stores table #first td{
+    margin-top: 10px;
+}
+*/
+
+
+#other-stores table tr th {
+    border-bottom: 1px solid black;
+    font-size: 14px;
+}
+
+#other-stores table th {
+    text-align: left;
+    text-indent: 5px;
+}
+
+#other-stores table td {
+    text-align: left;
+    text-indent: 5px;
+}
+
+#other-stores table td:first-child {
+    text-decoration: underline;
+}
+
+#other-stores button {
+    width: 70px;
+    height: 30px;
+    border: none;
+    background-color: #40c73c;
+    border-radius: 2px;
+    color: white;
+    font-weight: bold;
+}
+
+#other-stores button:hover {
+    background-color: #30b032;
+    cursor: pointer;
+}
+
+/* PRODUCT BOX */
+
+#product-details {
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+#product-details h2 {
+    width: 100%;
+    font-size: 20px;
+    text-align: left;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
+
+#product-details #table {
+    margin-top: -15px;
+    width: 45%;
+    height: auto;
+}
+
+#product-details #description {
+    margin-top: -15px;
+    width: 55%;
+    height: auto;
+}
+
+#product-details #table table {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    font-size: 14px;
+    width: 85%;
+}
+
+#product-details #table table tr td {
+    width: 50%;
+}
+
+#product-details #table table #first {
+    border-top: 1px solid gainsboro;
+}
+
+#product-details #table table tr, td {
+    border-bottom: 1px solid gainsboro;
+    height: 40px;
+    text-align: left;
+    text-indent: 20px;
+}
+
+#product-details #table table td {
+    background-color: #f5f5f5;
+}
+
+#product-details #table table td:first-child {
+    background-color: #ededed;
+}
+
+/* SIMILIAR PRODUCTS START */
+
+#similiar-products {
+    width: 100%;
+}
+
+#similiar-products h2 {
+    margin-top: 50px;
+}
+
+#similiar-products ul {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+#similiar-products ul li {
+    display: inline-block;
+}
+
+#similiar-products ul li div {
+    width: 150px;
+    height: 150px;
+    border: 1px solid gainsboro;
+}
+
+/* SIMILIAR PRODUCTS END */
+
+/* CUSTOMER REVIEWS START */
+
+#reviews {
+    width: 100%
+}
+
+#reviews h2 {
+    margin-top: 50px;
+}
+
+/* CUSTOMER REVIEWS END */

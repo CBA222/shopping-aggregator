@@ -1,0 +1,213 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'shop/index.css' %}" />
+
+<html>
+    <head>
+        <link rel="shortcut icon" href="{%  static 'shop/favicon.ico' %}">
+
+        {% block page-title %}
+        <title>Full Shelf</title>
+        {% endblock %}
+    </head>
+    <body>
+
+    <form method="get" action = "{% url 'shop:search_results' page_number=1 %}">
+        
+        <div id="login-bar">
+            <ul>
+                <li><a>Login or Signup</a></li>
+                <li id="myaccount">My Account</li>
+            </ul>
+        </div>
+        
+        <div class="header">
+            <div id="top">
+                <div id="left">
+                </div>
+                <div id="middle">
+                    <div class="search-container">
+                        <div id="category-selector">
+                            <select>
+                                {% for category in categories %}
+                                <option>{{ category }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div id="search-bar">
+                            {{ SearchBar.query }}
+                        </div>
+                        <div id="search-button">
+                            <button type="submit">Search</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="right">
+                    <button>
+                    Advanced Search    
+                    </button>
+                </div>
+            </div>
+            <div id="bottom">
+                <div id="bottom-nav">
+                    <div>
+                        <a href="{% url 'shop:index' %}">
+                        <div id="nav-header">
+                            <p>Home</p>
+                        </div>
+                        </a>
+                    </div>
+                    <div id="categories">
+                        <div id="nav-header">
+                            <p>Categories</p>
+                        </div>
+                        <div id="submenu">
+                            {% for key, value in header_categories.items %}
+                            <div>
+                                <ul>
+                                    <li><b>{{ key }}</b></li>
+                                    {% for i in value %}
+                                    <li><a href='#'>{{ i }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        
+                    </div>
+                    <div id="deals">
+                        <div id="nav-header">
+                            <p>Deals</p>
+                        </div>
+                        <div id="submenu">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div id="tools-menu">
+                        <div id="nav-header">
+                            <p>Tools</p>
+                        </div>
+                        <div id="submenu">
+                            <div>
+                                <div id="image"></div>
+                                <div id="info">
+                                    <h4>Comparison Tool</h4>
+                                    <p>Loren Ipsum Loren Ipsum Loren Ipsum Loren Ipsum </p>
+                                </div>
+                            </div>
+                            <div>
+                                <div id="image"></div>
+                                <div id="info"></div>
+                            </div>
+                            <div>
+                                <div id="image"></div>
+                                <div id="info"></div>
+                            </div>
+                            <div>
+                                <div id="image"></div>
+                                <div id="info"></div>
+                            </div>
+                            <div>
+                                <div id="image"></div>
+                                <div id="info"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tools">
+                    <div id="tools-header">
+                        <p>My Watchlist</p>
+                    </div>
+                    <div id="watchlist">
+                        <div></div>
+                        <div>
+                            <p>Product Title</p>
+                            <p>Latest Price: $9.99</p>
+                        </div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!--<a href="{% url 'shop:index' %}"><img id="logo" src="{% static 'shop/icon.png' %}"></a>-->
+        {% block main-content %}
+
+        <input type="hidden" name="sort_order" value="relevance" />
+        <input type="hidden" name="items_per_page" value=25 />
+        <input type="hidden" name="sort_items" value="relevance" />
+        <input type="hidden" name="price_range" value="all" />
+
+        <!--
+        <div id="header-nav">
+            <ul>
+                {% for nav in main_menu %}
+                <li>
+                    <div>
+                        <p>{{ nav }}</p>
+                        <div></div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        -->
+        <main>
+            <div id="description">
+                <h1>Welcome to FullShelf,</h1>
+                <h3>a search engine for shoppers, allowing you to compare products from all the internet's retailers</h3>
+            </div>
+        </main>
+
+
+        {% endblock %}
+
+        <footer>
+            <div>
+                <ul>
+                    <li><b>About Us</b></li>
+                    <li>Our Mission</li>
+                    <li>Company History</li>
+                    <li>FAQ</li>
+                    <li>People</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><b>Contact</b></li>
+                    <li>Contact Information</li>
+                    <li>Help Center</li>
+                    <li>Site Feedback</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><b>Partners</b></li>
+                    <li>Add Your Products</li>
+                </ul>
+            </div>
+        </footer>
+    </form>
+
+    <script src="{% static 'shop/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'shop/index.js' %}"></script>
+    {% block scripts %}
+    
+    {% endblock %}
+
+    </body>
+</html>

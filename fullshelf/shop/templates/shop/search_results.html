@@ -1,0 +1,100 @@
+{% extends "shop/index.html" %}
+{% load static %}
+
+{% block page-title %}
+<title>Search Results: {{ query }}</title>
+{% endblock %}
+
+{% block main-content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'shop/style2.css' %}" />
+
+<div class="container">
+
+    <div class="search-sidebar">
+        <div id="filter-top">
+            <input id="filter-button" type="submit" value="Apply filters">
+        </div>
+        <div id="filter-list">
+            <h4 class="filter-title">Category</h4>
+            {% for category in categories %}
+            <label>
+                <input id="your_name" type="checkbox" name={{ category.name }}>
+                <label for="your_name">{{ category.name }}</label>
+            </label><br>
+            {% endfor %}    
+
+            <h4 class="filter-title">Vendor</h4>
+            {% for vendor in vendor_list %}
+            <label>
+                <input type="checkbox" name={{ vendor.name }}>
+                {{ vendor.name }}
+            </label><br>
+            {% endfor %} 
+
+            <input type="hidden" name="price_range" value="all" />
+            <h4 class="filter-title">Price</h4>
+            {{ Filters.price_range }}
+        </div>
+    </div>
+
+    <div class="search-results">
+        <h3 id="showing">Showing search results for <i>{{ query }}</i></h3>
+        
+        <div class="results-header">
+            <div class="results-options" id="show-per-page">
+                <p><b>Items per page</b></p>
+                {{ DisplayItems.items_per_page }}
+            </div>
+            <div class="results-options" id="sort-options">
+                <p><b>Sort by</b></p>
+                {{ DisplayItems.sort_items }}
+            </div>
+        </div>
+
+        <div class="product-grid">
+            {% for product in product_list %}
+            <div class="product-container"> 
+                <a href="{% url 'shop:product_page' product_id=product.id %}"><img src={{ product.image_url }} class="product-image"></a>
+                <div class="product-description">
+                    <p class="price"><b>${{ product.best_price }}</b> | {{ product.best_vendor }}</p>
+                    <p class="title">{{ product.name|truncatechars:50}}</p>
+                    <p class="title-full">{{ product.name }}</p>
+                </div>
+            </div>
+
+            <div class="product-container-list">
+                <img src={{ product.image_url }} class="product-image">
+                <div>
+                    <p>{{ product.name}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="page-selector">
+            <ul>
+                <li id="arrow-select">
+                    <button type="submit" formaction = "{% url 'shop:search_results' page_number=current_page|add:"-1" %}">
+                            <img src="{% static 'shop/icons/chevron-left.svg' %}">
+                    </button>
+                </li>
+                {% for page_number in page_number_list %}
+                <li id="pg-num">
+                    {% if page_number != current_page %}
+                    <button type="submit" formaction = "{% url 'shop:search_results' page_number=page_number %}">{{ page_number }}</button>
+                    {% else %}
+                    <button style="background-color: #ba5b5b" type="submit" formaction = "{% url 'shop:search_results' page_number=page_number %}">{{ page_number }}</button>
+                    {% endif %}
+                </li>
+                {% endfor %}
+                <li id="arrow-select">
+                    <button type="submit" formaction = "{% url 'shop:search_results' page_number=current_page|add:"1" %}">
+                        <img src="{% static 'shop/icons/chevron-right.svg' %}">
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

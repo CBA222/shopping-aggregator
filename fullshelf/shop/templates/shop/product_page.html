@@ -1,0 +1,210 @@
+{% extends "shop/index.html" %}
+{% load static %}
+
+{% block page-title %}
+<title>{{ product.name }}</title>
+{% endblock %}
+
+{% block main-content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'shop/product_page.css' %}" />
+
+<input type="hidden" name="items_per_page" value=25 />
+<input type="hidden" name="sort_items" value="relevance" />
+<input type="hidden" name="price_range" value="all" />
+
+<div id="screen"></div>
+
+
+<div class="container">
+
+    <div id="product-header">
+
+        <a href=#><p>Level 1 Category</p></a>
+        <p>></p>
+        <a href=#><p>Level 2 Category</p></a>
+        <p>></p>
+        <a href=#><p>Level 3 Category</p></a>
+
+    </div>
+
+    <div id="product-box">
+
+        <div id="image-gallery">
+            <div id="product-img"><img src={{ product.image_url }}></div>
+            <div id="gallery-thumbs">
+                <div><img src={{ product.image_url }}></div>
+            </div>
+        </div>
+        
+    
+        <div id="product-description">
+            <h2>{{ product.name }}</h2>
+            <div id="rating">
+                <ul>
+                    <li id="starred"></li>
+                    <li id="starred"></li>
+                    <li id="starred"></li>
+                    <li id="starred"></li>
+                    <li></li>
+                </ul>
+                <a href="#reviews">See all reviews</a>
+            </div>
+            
+            <div id="buy-box-wrapper">
+                <div id="buy-box">
+                    <p id="header">Best Price:</p>
+                    <div id="buy">
+                        <p id="price">${{ product.best_price }}</p>
+                        
+                        <div id="buynow">
+                            <a target="_blank" href="{{ product.best_url }}"><button type="button">Buy now</button></a>
+                        </div>
+
+                        <div id="cheaper">
+                            <button type="button">Show Cheaper Options</button>
+                        </div>
+                    </div>
+                    <p id="vendor">From {{ product.best_vendor }}</p>
+                </div>
+
+                <div id="extra-box">
+                    <div id="wishlist">
+                        <img src="{% static 'shop/icons/file-text.svg' %}">
+                        <a href="#"><p>Add to Watch List</p></a>
+                    </div>
+                    <div id="wishlist">
+                        <img src="{% static 'shop/icons/shopping-bag.svg' %}">
+                        <a href="#"><p>Notify me when price decreases</p></a>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="cheaper-options-wrapper">
+                <div id="cheaper-options">
+                    <button type="button"><img src="{% static 'shop/icons/chevron-left.svg' %}"></button>
+                    <div id="product-gallery">
+                        <div>
+                            <div><img></div>
+                            <p>$3.99</p>
+                        </div>
+                        <div>
+                            <div><img></div>
+                            <p>$30.99</p>
+                        </div>
+                        <div>
+                            <div><img></div>
+                            <p>$300.99</p>
+                        </div>
+                        <div>
+                            <div><img></div>
+                            <p>$3000.99</p>
+                        </div>
+                        <div>
+                            <div><img></div>
+                            <p>Price</p>
+                        </div>
+                    </div>
+                    <button type="button"><img src="{% static 'shop/icons/chevron-right.svg' %}"></button>
+                </div>
+            </div>
+
+            <div id="other-stores">
+                <p id="one-p">More Stores:</p>
+                <table cellspacing="0" id="other-stores-table">
+                    <tr id="header">
+                        <th>Store</th>
+                        <th>Base price</th>
+                        <th>Final price</th>
+                        <th>Showing 1 of {{ product.listings|length }}</th>
+                    </tr>
+                    {% for listing in product.listings %}
+                    {% if forloop.counter0 < 4 %}
+                    <tr>
+                        <td>{{ listing.vendor }}</td>
+                        <td>${{ listing.price }}</td>
+                        <td>${{ listing.price }}</td>
+                        <td><a target="_blank" href="{{ listing.url }}"><button type="button">BUY</button></a></td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </table>
+                <p id="two-p">See all stores</p>
+                <!--<p style="font-size:14px">Showing 1 of {{ product.listings|length }}</p>-->
+            </div>
+        </div>
+        
+    </div>
+
+    <div id="product-details">
+        <h2>Product Information</h2>
+        <div id="table">
+            <h4>Details</h4>
+            <table cellspacing="0">
+                <tr id="first">
+                    <td>Brand</td>
+                    <td>SkullCandy</td>
+                </tr>
+                <tr>
+                    <td>Category</td>
+                    <td>Electronics > Audio > Headphones</td>
+                </tr>
+                <tr>
+                    <td>UPC</td>
+                    <td>{{ product.upc }}</td>
+                </tr>
+                <tr>
+                    <td>Model Number</td>
+                    <td>{{ product.model_number }}</td>
+                </tr>
+                <tr>
+                    <td>Dimensions</td>
+                    <td>.</td>
+                </tr>
+                <tr>
+                    <td>Weight</td>
+                    <td>.</td>
+                </tr>
+            </table>
+        </div>
+        <div id="description">
+            <h4>Description</h4>
+            <p>{{ product.description }}</p>
+        </div>
+    </div>
+
+    <div id="similiar-products">
+        <h2 class="section-heading">Shop Similiar Products</h2>
+        <ul>
+            <li><div></div></li>
+            <li><div></div></li>
+            <li><div></div></li>
+            <li><div></div></li>
+            <li><div></div></li>
+            <li><div></div></li>
+            <li><div></div></li>
+        </ul>
+    </div>
+
+    <div id="reviews"> 
+        <h2 class="section-heading">Customer Reviews</h2>
+    </div>
+
+        
+</div>
+
+<!--
+<script src="{% static 'shop/tablesort.js' %}"></script>
+<script src="{% static 'shop/tablesort.number.js' %}"></script>
+<script>
+    new Tablesort(document.getElementById('other-stores-table'));
+</script>
+-->
+
+{% endblock %}
+
+
+{% block scripts %}
+<script src="{% static 'shop/product_page.js' %}"></script>
+{% endblock %}
